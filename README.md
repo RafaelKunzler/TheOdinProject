@@ -1,3 +1,3 @@
 # TheOdinProject
 
-Primeiro projeto, usando apenas HTML
+Exercicios do curso The Odin Project
