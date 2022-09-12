@@ -1,0 +1,14 @@
+.dark,
+.simpsons {
+    font-size: 28px;
+    font-family: Helvetica, 'Times New Roman', sans-serif;
+}
+
+.dark {
+    background-color: #242423;
+    color: #e9ecef;
+}
+
+.simpsons {
+    background-color: #eeef20;
+}
