@@ -56,9 +56,9 @@ function game(){
         playRound(playerSelection, computerSelection)        
     }
     if (score > 0) {
-        console.log("Congratulations, You won!")
+        console.log("Congratulations, You won the match!")
     } else if (score < 0) {
-        console.log("Oh no, You lost!")
+        console.log("Oh no, You lost the match!")
     } else 
         console.log("Sorry, but it's a draw!")
     
