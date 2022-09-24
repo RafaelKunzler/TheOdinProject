@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script src="code.js"></script>
+    <script src="code.js" defer></script>
+    <div class="header">
+        <div class="left">
+            <img src="img\logo.png" class="logo" alt="Logo aleatório de pedra papel tesoura">
+            <p>Rock Paper Scissors!</p>
+        </div>
+        <div class="right">
+            <a href="https://github.com/RafaelKunzler/TheOdinProject/tree/main/3.Rock%20Paper%20Scissors" target="_blank">
+                GitHub
+            </a>
+        </div>
+    </div>
+    <div>  
+        <div class="game" >
+            <div class="container hover" id="rock">
+                <input type="image" class="img" src="/img/rock.svg"/>
+                <p>Rock</p>
+            </div>
+            <div class="container hover" id="paper">
+                <input type="image" class="img" src="/img/paper.svg"/>
+                <p>Paper</p>
+            </div>
+            <div class="container hover" id="scissors">
+                <input type="image" class="img" src="/img/scissors.svg"/>
+                <p>Scissors</p>
+            </div>
+        </div>
+    </div>
+    <div class="score">
+        <div>
+            <p>Player:</p>
+            <p id="playerScore">0</p>
+        </div>
+        <div id="msg">
+
+        </div>
+        <div>
+            <p>Computer:</p>
+            <p id="pcScore">0</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Rafael Künzler © Project</p>
+    </div>
 </body>
 </html>
