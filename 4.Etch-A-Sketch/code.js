@@ -25,16 +25,6 @@ function resize(num) {
     resize.style.gridTemplateColumns = "repeat(" + num + ", 1fr)";
 }
 
-function isClicked() {    
-    var title = document.querySelectorAll(".square");
-    for (let i = 0; i < title.length; i++) {
-        title[i].addEventListener("mousedown", function(){                            
-            return true;
-        });
-    }    
-}
-
-
 function changeColor() {  
       
     var title = document.querySelectorAll(".square");               
