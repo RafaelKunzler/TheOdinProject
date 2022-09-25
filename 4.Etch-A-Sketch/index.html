@@ -23,11 +23,22 @@
     <div class="game">
         <div class="content" id="content">
         </div>
-        <div class="options">
-            <input type="color" id="penColor" class="penColor">
-            <label for="penColor">Pen Color</label>
+        <div class="options">            
+            <div class="colors">
+                <div>
+                    <input type="color" id="penColor" class="penColor">
+                    <label for="penColor">Pen Color</label>
+                </div>
+                <div>
+                    <input type="color" id="bgColor" class ="bgColor" value="#fff1e6">
+                    <label for="bgColor">Background Color</label>                  
+                </div>
+            </div>
             <div class="button">
                 <button onclick="restartGame()">Grid Size</button>
+                <button class="changeBg" type="button" onclick="bgChange()">
+                    Change Background
+                </button>
             </div>
         </div>
     </div>

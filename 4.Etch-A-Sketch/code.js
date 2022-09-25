@@ -1,5 +1,6 @@
 let num = 16;
 let penColor = "black";
+let bgColor = "#fff1e6";
 
 function createDiv(num) {
     for(i=0; i<num ; i++) {
@@ -25,20 +26,32 @@ function resize(num) {
     resize.style.gridTemplateColumns = "repeat(" + num + ", 1fr)";
 }
 
-function changeColor() {  
-      
+function changeColor() {        
     var title = document.querySelectorAll(".square");               
     for (let i = 0; i < title.length; i++) {                                    
         title[i].addEventListener("mousemove", function(e){                            
             if(e.which == 1) {
                 penColor = document.getElementById("penColor").value;
                 this.style.backgroundColor = penColor;
+                this.classList.add("inked");
             }
             if (e.shiftKey) {
-                this.style.backgroundColor = "#fff1e6";
+                this.style.backgroundColor = bgColor.select();
             }
         });
-    }        
+    }     
+}
+
+
+
+function bgChange() {    
+    bgColor = document.getElementById("bgColor").value;
+    let title = document.querySelectorAll(".square")
+    for (let i = 0; i < title.length; i++) {  
+        if (!title[i].classList.contains('inked')) {
+            title[i].style.backgroundColor = bgColor;   
+        }
+    }
 }
 
 function restartGame() {    
@@ -47,11 +60,12 @@ function restartGame() {
     const floorNum = Math.floor(newNum)   
     if ((floorNum <= 100) && (floorNum > 0)) {
         createDiv(floorNum);   
-        changeColor();    
+        changeColor();          
     } else {
         alert("Error, choose a size between 1 to 100!");
         createDiv(num)   
-        changeColor();      
+        changeColor();   
+        
     }
 }
 
@@ -59,6 +73,7 @@ function restartGame() {
 
 createDiv(num);
 changeColor();
+bgChange();
 
 
 
