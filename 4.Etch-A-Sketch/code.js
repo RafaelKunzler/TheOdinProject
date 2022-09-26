@@ -8,7 +8,7 @@ function createDiv(num) {
         for(j=0; j<num ; j++) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("square")
-        
+        newDiv.style.backgroundColor = bgColor;
         content.appendChild(newDiv)
         }
     }   
