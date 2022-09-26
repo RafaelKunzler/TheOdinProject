@@ -38,6 +38,7 @@ function changeColor() {
             }
             if (e.shiftKey) {
                 this.style.backgroundColor = bgColor;
+                this.classList.remove("inked");
             }
         });
     }     
