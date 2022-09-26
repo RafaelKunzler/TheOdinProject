@@ -9,6 +9,7 @@
 </head>
 <body>
     <script src="code.js" defer></script>
+    <script src="html2canvas.min.js"></script>
     <div class="header">
         <div class="left">
             <img src="/img/logo.png" class="logo" alt="logo com desenho de troféu pixelado">
@@ -21,9 +22,24 @@
         </div>
     </div>
     <div class="game">
-        <div class="content" id="content">
+        <div class="canvasContent" id="canvasContent">
+            <div class ="canvas" id="canvas">
+            </div>
         </div>
-        <div class="options">            
+                
+        <div class="content" id="content">
+        </div>       
+        <div class="options"> 
+            <div class="about">
+                <h1>Hi, I'm a Pixel Art Creator!</h1>
+                <h3>About Me:</h3>
+                <ul style="list-style: none;">
+                    <li>I can store up to 5 images at once.</li>
+                    <li>Right click a image to download it.</li>
+                    <li>If you made a mistake, no problem, just press SHIFT on it.</li>
+                    
+                </ul>
+            </div>            
             <div class="colors">
                 <div>
                     <input type="color" id="penColor" class="penColor">
@@ -32,6 +48,9 @@
                 <div>
                     <input type="color" id="bgColor" class ="bgColor" value="#fff1e6">
                     <label for="bgColor">Background Color</label>                  
+                </div>
+                <div>
+                    <button onclick="addSavedImage()">Save</button>
                 </div>
             </div>
             <div class="button">
@@ -46,6 +65,6 @@
         <p>Rafael Künzler © Project</p>
     </div>
 
-   
+
 </body>
 </html>

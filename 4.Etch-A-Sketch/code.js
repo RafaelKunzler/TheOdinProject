@@ -1,6 +1,7 @@
 let num = 16;
 let penColor = "black";
 let bgColor = "#fff1e6";
+let miniatureCounter = 0;
 
 function createDiv(num) {
     for(i=0; i<num ; i++) {
@@ -36,7 +37,7 @@ function changeColor() {
                 this.classList.add("inked");
             }
             if (e.shiftKey) {
-                this.style.backgroundColor = bgColor.select();
+                this.style.backgroundColor = bgColor;
             }
         });
     }     
@@ -69,6 +70,29 @@ function restartGame() {
     }
 }
 
+function saveImg() {    
+    html2canvas(document.querySelector("#content")).then(canvas => {        
+        let miniature = document.getElementById("canvas")
+        canvas.style.width = "100px";
+        canvas.style.height = "100px";        
+        miniature.appendChild(canvas)
+        
+    });
+}
+
+function addSavedImage() {
+    if (miniatureCounter < 5) {
+        saveImg();
+        miniatureCounter++;
+    } else {
+        var element = document.querySelectorAll("canvas");
+        for (let i = 0; i < element.length; i++) {
+            element[i].remove();
+        } 
+        saveImg();
+        miniatureCounter = 1;
+    }
+}
 
 
 createDiv(num);
