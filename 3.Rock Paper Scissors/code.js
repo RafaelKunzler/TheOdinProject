@@ -1,7 +1,7 @@
 let scorePc = 0;
 let scorePlayer = 0;
 let round = 0;
-let maxRound = 3;
+let maxRound = 5;
 
 document.getElementById("rock").addEventListener("click", rock);
 
