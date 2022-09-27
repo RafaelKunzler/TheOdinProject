@@ -21,33 +21,59 @@
         </div>
     </div>
     <div>  
-        <div class="game" >
-            <div class="container hover" id="rock">
-                <input type="image" class="img" src="/img/rock.svg"/>
-                <p>Rock</p>
-            </div>
-            <div class="container hover" id="paper">
-                <input type="image" class="img" src="/img/paper.svg"/>
-                <p>Paper</p>
-            </div>
-            <div class="container hover" id="scissors">
-                <input type="image" class="img" src="/img/scissors.svg"/>
-                <p>Scissors</p>
-            </div>
+        <div class="game">           
+            <div class="user">
+                <div class="userInfo">
+                    <img src="img/profile.png" class="icon">
+                    <div class="userScore">
+                        <p>Player:</p>
+                        <p id="playerScore">0</p>
+                    </div>
+                </div>
+                <div class="playerInterface">
+                    <div class="container player hov" id="rock">
+                        <input type="image" class="img" src="/img/rock.svg"/>
+                        <p>Rock</p>
+                    </div>
+                    <div class="container player hov" id="paper">
+                        <input type="image" class="img" src="/img/paper.svg"/>
+                        <p>Paper</p>
+                    </div>
+                    <div class="container player hov" id="scissors">
+                        <input type="image" class="img" src="/img/scissors.svg"/>
+                        <p>Scissors</p>
+                    </div>
+                </div>             
+            </div>         
+            
+            <div class="user computer">
+                <div class="userInfo">
+                    <img src="img/computer.png" class="icon">
+                    <div class="userScore">
+                        <p>Computer:</p>
+                        <p id="pcScore">0</p>
+                    </div>
+                </div>
+                <div class="playerInterface">
+                    <div class="container" id="pcRock">
+                        <input type="image" class="img" src="/img/rock.svg"/>
+                        <p>Rock</p>
+                    </div>
+                    <div class="container" id="pcPaper">
+                        <input type="image" class="img" src="/img/paper.svg"/>
+                        <p>Paper</p>
+                    </div>
+                    <div class="container" id="pcScissors">
+                        <input type="image" class="img" src="/img/scissors.svg"/>
+                        <p>Scissors</p>
+                    </div>
+                </div>             
+            </div>           
         </div>
     </div>
-    <div class="score">
-        <div>
-            <p>Player:</p>
-            <p id="playerScore">0</p>
-        </div>
+    <div class="score">        
         <div id="msg">
-
-        </div>
-        <div>
-            <p>Computer:</p>
-            <p id="pcScore">0</p>
-        </div>
+        </div>        
     </div>
     <div class="footer">
         <p>Rafael Künzler © Project</p>
