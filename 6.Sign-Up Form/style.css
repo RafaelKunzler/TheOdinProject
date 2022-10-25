@@ -1,0 +1,139 @@
+@font-face {
+    font-family: narutoFont;
+    src: url(/font/njnaruto.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;   
+     
+}
+
+.konoha {
+    height: 120vh;
+    width: 530px;
+    position: absolute;
+    top: 0;
+}
+
+.logo {    
+    display: flex;
+    position: relative;
+    width: 402px ;
+    height: 223px;
+    padding: 24px 64px;    
+    background-color: rgba(0, 3, 7, 0.185);
+    
+    gap: 4px;
+    align-items: center;
+    justify-content: center;  
+}
+
+.konohaLogo {
+    width: 80px;    
+}
+
+.logoText {    
+    font-size: 60px;
+    font-family: narutoFont;
+}
+
+.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 530px;
+    height: 120vh;
+    background-color: rgb(236, 227, 227);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.form {      
+    background-color: #F1F1F1;
+    color:rgb(85, 76, 76); 
+    padding: 30px 160px 50px 50px;
+}
+
+.data {
+    display: flex;  
+    flex-direction: row;
+    gap: 18px;
+}
+
+.title {  
+    display: flex;  
+    flex-direction: column;
+    padding: 80px 160px 30px 50px;
+    font-size: 24px;
+    gap: 26px;
+}
+
+.submit {
+    padding-top: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 48px 0px;
+    width: 500px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    background-color: rgb(236, 227, 227);
+    padding: 20px 160px 30px 50px;
+    gap: 120px;
+    
+}
+
+input {
+    width: 260px;
+    height: 28px;  
+    border: 1px solid rgb(236, 227, 227);
+    
+    padding: 2px;
+    border-radius: 5px;
+
+}
+
+input:active, input:focus {
+    border: 1px solid darkblue;
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: rgb(59, 105, 165);
+    height: 42px;
+    width: 180px;
+    color: rgb(236, 227, 227);
+    font-size: 16px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+}
+
+label {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(59, 105, 165);
+}
+
+.errorPassword {
+    border: 1px solid red;
+    outline: none;
+}
+
+#msg {
+    color: red;
+    font-size: 11px;
+    position: absolute;
+    bottom: 140px;
+}
