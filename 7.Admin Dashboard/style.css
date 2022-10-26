@@ -125,15 +125,97 @@
     gap: 24px;
 }
 
-.content1 {
+.content1{
     grid-area: content1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 12px;
+}
+
+.contentText {
+    color: rgb(114, 114, 114);
+}
+
+.projectContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;    
+    
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: aliceblue;
+    height: 130px;
+    padding: 26px;   
+    border-radius: 10px;
+    border-left: 6px solid goldenrod;
+}
+
+#project {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.projectIcons {
+    display: flex;       
+    gap: 32px; 
+    
+}
+
+.projectIcon {
+    width: 16px;
 }
 
 .content2 {
     grid-area: content2;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
 }
 .content1, .content2 {
     background-color: lightgray;
+}
+
+.announcements, .trending {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;   
+}
+
+.announcementsContainer, .trendingContainer {
+    display: flex;    
+    flex-direction: column;
+    background-color: aliceblue;    
+    padding: 26px;   
+    border-radius: 10px;
+    gap: 19px;  
+    width: 60%; 
+}
+
+#announcements {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.trending
+
+#trending {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 a {
@@ -144,16 +226,21 @@ a:visited {
     color:aliceblue;
 }
 
-p {
-    
-}
-
 h1 {
     color: aliceblue;
     font-size: 22px;
 }
 
-@media only screen and (max-width: 750px) {
+.h7 {
+    color: rgb(114, 114, 114);
+    font-size: 12px;;
+}
+
+input:active, input:focus {
+    outline: none;
+}
+
+/* @media only screen and (max-width: 750px) {
     .site {
         grid-template-columns: 1fr;
         grid-template-rows: .4fr .4fr 2.2fr 1.2fr;
@@ -163,4 +250,4 @@ h1 {
         "content1"
         "content2";
     }
-}
+} */
