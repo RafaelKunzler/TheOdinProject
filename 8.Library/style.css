@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#fullsite {
+    height: 100vh;
+    background-color: #c7ddc7;   
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#475e47;
+    color: aliceblue;
+    padding: 12px 48px;
+}
+
+.logo {
+    width: 46px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    background-color: #c7ddc7;   
+    padding: 60px; 
+    row-gap: 24px;
+}
+
+.addContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+    background-color: aliceblue;
+    width: 180px;
+    border-radius: 32px;
+}
+
+.bigIcon {
+    width:  68px;    
+}
+
+.bigButton {
+    background-color: darkseagreen;
+    border: none;
+    border-radius: 100%;
+    padding: 24px;
+}
