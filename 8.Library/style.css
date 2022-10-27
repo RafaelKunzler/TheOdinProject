@@ -7,14 +7,14 @@
     display: grid;
     grid-template-rows: .2fr 1fr;
     height: 100vh;
-    background-color:#5f9f5f;
+    
 }
 
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:#5f9f5f;
+    background-color:#b3c3d1;
     color: aliceblue;
     padding: 12px 48px;
     
@@ -27,20 +27,19 @@
 .header {
     display: flex;
     align-items: center;
-    gap: 16px;    
+    gap: 16px;   
 }
 
 #container {
     display: grid;    
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    background-color: #c7ddc7;   
+    background-color: #e3e3ee;   
     padding: 60px; 
     row-gap: 24px; 
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;    
+       
 }
 
-.addContainer {
+.addContainer, .formPopup {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,10 +49,75 @@
     color: darkseagreen;
     width: 180px;
     border-radius: 32px;
-    gap: 16px
+    gap: 16px;
+    border: 2px solid #5f9f5f;
 }
 
-.addContainer:hover, .bookContainer:hover {
+.formPopup {
+    display: none;
+    font-size: 18px;
+    color: #474747
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;    
+    padding: 12px;
+}
+
+input {
+    display: flex;
+    border: none;
+    border-radius: 16px;
+    background-color: lightgray;
+    font-size: 14px;  
+    padding: 3px;  
+    width: 90%;
+}
+
+#submit {       
+    display: flex;
+    justify-content: center;
+    padding: 8px 24px;
+    color: #474747;
+
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit:hover {
+    transform: scale(1.1);
+}
+
+.read {
+    display: flex;
+    align-self: start;
+    gap: 16px;
+}
+
+.cancelForm {
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.cancelForm:hover {
+    text-decoration: underline;
+}
+
+.cancel {    
+    border: none;
+    color:#9f5f5f
+}
+
+.addContainer:hover, .bookContainer:hover, .formPopup:hover {
     transform: scale(1.1);
 }
 
@@ -79,8 +143,15 @@
     height: 260px;
     background-color: #5f9f5f;
     width: 180px;
+    border-left: 3px solid gray;   
+    border-bottom: 3px solid gray;  
     border-radius: 32px;
     color: aliceblue;
+    text-align: center;    
+}
+
+#unread, .unread{
+    background-color: #9f5f5f ;
 }
 
 .icon {
@@ -91,6 +162,7 @@
     display: flex;
     align-self: flex-start; 
     margin: 14px;    
+    
 }
 
 .bottomBookContainer {
@@ -114,4 +186,9 @@
     display: flex;
     align-items: center;
     gap: 8px;    
+}
+
+input:active, input:focus {
+    border: none;
+    outline: none;
 }
