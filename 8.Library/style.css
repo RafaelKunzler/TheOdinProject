@@ -3,18 +3,21 @@
     padding: 0;
 }
 
-#fullsite {
+#fullsite {    
+    display: grid;
+    grid-template-rows: .2fr 1fr;
     height: 100vh;
-    background-color: #c7ddc7;   
+    background-color:#5f9f5f;
 }
 
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:#475e47;
+    background-color:#5f9f5f;
     color: aliceblue;
     padding: 12px 48px;
+    
 }
 
 .logo {
@@ -24,25 +27,34 @@
 .header {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 16px;    
 }
 
 #container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     background-color: #c7ddc7;   
     padding: 60px; 
-    row-gap: 24px;
+    row-gap: 24px; 
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;    
 }
 
 .addContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 260px;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
+    color: darkseagreen;
     width: 180px;
     border-radius: 32px;
+    gap: 16px
+}
+
+.addContainer:hover, .bookContainer:hover {
+    transform: scale(1.1);
 }
 
 .bigIcon {
@@ -54,4 +66,52 @@
     border: none;
     border-radius: 100%;
     padding: 24px;
+}
+
+.bigButton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 16px #5f9f5f;    
+}
+
+.bookContainer {
+    display: grid;
+    flex-direction: column;    
+    height: 260px;
+    background-color: #5f9f5f;
+    width: 180px;
+    border-radius: 32px;
+    color: aliceblue;
+}
+
+.icon {
+    width: 26px;
+}
+
+.viewIcon {
+    display: flex;
+    align-self: flex-start; 
+    margin: 14px;    
+}
+
+.bottomBookContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 14px;
+
+}
+
+.bookInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;    
+    gap: 12px;
+    
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 8px;    
 }
