@@ -10,72 +10,80 @@ function Book(bookName, author, pages, read) {
     this.bookId = bookId;
 }
 
-const book1 = new Book("A revolução dos bichos", "George Orwell", 152, "on");
+const book1 = new Book("A revolução dos bichos", "George Orwell", 152, true);
 myLibrary.push(book1);
 bookId++;
-const book2 = new Book("Harry Potter e a Pedra Filosofal", "J. K. Rowling", 208, 1);
+
+const book2 = new Book("Harry Potter e a Pedra Filosofal", "J. K. Rowling", 208, false);
 myLibrary.push(book2);
 bookId++;
 
-function addCard() {
+function addCard(book) {
     const newDiv = document.createElement("div");
-    newDiv.innerHTML = `<div><img src="/img/view.png" class="icon viewIcon"></div>
+    newDiv.innerHTML = `
     <div class="bookInfo">
-        <div class="bookTitle" id="bookName`+ bookId + `">
-            
+        <div><button class="view view`+ bookId +`" id="`+ bookId +`" onclick="changeRead(this.id)"><img src="/img/view.png" class="icon viewIcon"></button></div>
+            <div class="bookTitle" id="bookName`+ bookId + `">            
+            </div>
+            <div class ="author" id="author` + bookId +`">            
+            </div>
         </div>
-        <div id="author` + bookId +`">
-            
-        </div>
-    </div>
-    <div class="bottomBookContainer">
-        <div class="pages">
-            <div><img src="/img/open-book.png" class="icon bookIcon"></div>
-            <h4>|   </h4>
-            <div id="page`+ bookId + `"></div>
-        </div>
-        <div><img src="/img/bin.png" class="icon binIcon"></div>
+        <div class="bottomBookContainer">
+            <div class="pages">
+                <div><img src="/img/open-book.png" class="icon bookIcon"></div>
+                <h4>|   </h4>
+                <div class="page" id="page`+ bookId + `"></div>
+            </div>
+            <div><button class="removeBook remove`+ bookId +`" id="`+ bookId +`" onclick="removeBook(this.id)"><img src="/img/bin.png" class="icon binIcon"></button></div>
     </div>`;   
-    newDiv.classList.add("bookContainer");
-    container.appendChild(newDiv); 
-    
+
+    newDiv.classList.add("bookContainer"); 
+    newDiv.classList.add("book" + bookId); 
+
+    const view = newDiv.querySelector(".view" + bookId);  
+    const remove = newDiv.querySelector(".remove" + bookId);
+    if(book.read == true) {
+        newDiv.classList.add("read");
+        view.classList.add("read");
+        remove.classList.add("read");
+    } else if(book.read == false) {
+        newDiv.classList.add("unread");
+        view.classList.add("unread");
+        remove.classList.add("unread");
+    }
+    container.appendChild(newDiv);       
 }
 
-function displayCard() {    
+function displayCards() {    
     let elem = document.querySelectorAll(".bookContainer");
     [].forEach.call(elem, function(el) {
         el.remove();
     });
+
     bookId = 0
     myLibrary.forEach((book) => {
-        addCard();          
+        addCard(book);          
         const bookName = document.getElementById("bookName" + bookId);
         bookName.textContent = book.bookName;
         const author = document.getElementById("author" + bookId);
         author.textContent = book.author;
         const page = document.getElementById("page" + bookId); 
-        page.textContent = book.pages;       
-        if(book.read != 1){
-            
-        }     
-        bookId++ ;         
-     });       
-     console.log(myLibrary);
+        page.textContent = book.pages;    
+        bookId++ ;   
+     });     
 }
 
 function addBookToLibrary() {
     const bookName = document.getElementById("bookTitle").value;
     const author = document.getElementById("bookAuthor").value;
     const pages = document.getElementById("pages").value;
-    let read = document.getElementById("read").value;
+    let read = document.getElementById("read").checked;
     let book = new Book(bookName, author, pages, read);
     myLibrary.push(book);       
     document.getElementById("bookForm").reset();
     closeForm();
-    displayCard();    
+    displayCards();        
 }
-
-
 
 function openForm() {
     document.getElementById("addBook").style.display = "block";
@@ -88,7 +96,46 @@ function closeForm() {
     document.getElementById("bookForm").reset();   
 }
 
-function changeRead() {
-    
+function changeRead(obj) {     
+    const id = obj;
+    const bookCard = document.querySelector(".book" + id);
+    const view = document.querySelector(".view" + id);
+    const remove = document.querySelector(".remove" + id);  
+
+    const book = myLibrary[id];
+    if(book.read == true) {
+        bookCard.classList.remove("read");
+        view.classList.remove("read");
+        remove.classList.remove("read");
+        bookCard.classList.add("unread");
+        view.classList.add("unread");
+        remove.classList.add("unread");        
+        book.read = false;
+
+    } else if(book.read == false) {
+        bookCard.classList.remove("unread");
+        view.classList.remove("unread");
+        remove.classList.remove("unread");
+        bookCard.classList.add("read");
+        view.classList.add("read");
+        remove.classList.add("read");  
+        book.read = true;     
+    }
+    console.log(book);
 }
+
+function removeBook(id) { 
+    const book = document.querySelector(".book" + id)   
+    book.remove();
+    myLibrary.splice(id, 1);
+    console.log(myLibrary);
+    displayCards();
+}
+
+function teste() {
+    console.log(myLibrary);
+    console.log(bookId);
+}
+
+displayCards();
 
