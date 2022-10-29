@@ -14,12 +14,28 @@ const book1 = new Book("A revolução dos bichos", "George Orwell", 152, true);
 myLibrary.push(book1);
 bookId++;
 
-const book2 = new Book("Harry Potter e a Pedra Filosofal", "J. K. Rowling", 208, false);
+const book2 = new Book("Harry Potter e a Pedra Filosofal", "J. K. Rowling", 208, true);
 myLibrary.push(book2);
+bookId++;
+
+const book3 = new Book("Cracking the Code Interview","Gayle Laakmann McDowell", 708, false);
+myLibrary.push(book3);
+bookId++;
+
+const book4 = new Book("Think Like a Programmer", "V. Anton Spraul", 256, true);
+myLibrary.push(book4);
 bookId++;
 
 function addCard(book) {
     const newDiv = document.createElement("div");
+    styleCard(newDiv);
+    newDiv.classList.add("bookContainer"); 
+    newDiv.classList.add("book" + bookId); 
+    isBookRead(book, newDiv);    
+    container.appendChild(newDiv);       
+}
+
+function styleCard(newDiv) {
     newDiv.innerHTML = `
     <div class="bookInfo">
         <div><button class="view view`+ bookId +`" id="`+ bookId +`" onclick="changeRead(this.id)"><img src="/img/view.png" class="icon viewIcon"></button></div>
@@ -36,10 +52,9 @@ function addCard(book) {
             </div>
             <div><button class="removeBook remove`+ bookId +`" id="`+ bookId +`" onclick="removeBook(this.id)"><img src="/img/bin.png" class="icon binIcon"></button></div>
     </div>`;   
+}
 
-    newDiv.classList.add("bookContainer"); 
-    newDiv.classList.add("book" + bookId); 
-
+function isBookRead(book, newDiv){
     const view = newDiv.querySelector(".view" + bookId);  
     const remove = newDiv.querySelector(".remove" + bookId);
     if(book.read == true) {
@@ -51,15 +66,21 @@ function addCard(book) {
         view.classList.add("unread");
         remove.classList.add("unread");
     }
-    container.appendChild(newDiv);       
 }
 
 function displayCards() {    
+    deleteAllCards();
+    addAllCards();        
+}
+
+function deleteAllCards() {
     let elem = document.querySelectorAll(".bookContainer");
     [].forEach.call(elem, function(el) {
         el.remove();
     });
+}
 
+function addAllCards() {
     bookId = 0
     myLibrary.forEach((book) => {
         addCard(book);          
@@ -70,7 +91,7 @@ function displayCards() {
         const page = document.getElementById("page" + bookId); 
         page.textContent = book.pages;    
         bookId++ ;   
-     });     
+     }); 
 }
 
 function addBookToLibrary() {
@@ -121,20 +142,13 @@ function changeRead(obj) {
         remove.classList.add("read");  
         book.read = true;     
     }
-    console.log(book);
 }
 
 function removeBook(id) { 
     const book = document.querySelector(".book" + id)   
     book.remove();
-    myLibrary.splice(id, 1);
-    console.log(myLibrary);
+    myLibrary.splice(id, 1);    
     displayCards();
-}
-
-function teste() {
-    console.log(myLibrary);
-    console.log(bookId);
 }
 
 displayCards();
