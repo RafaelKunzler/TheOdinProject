@@ -11,8 +11,6 @@
     
 }
 
-
-
 #header {
     display: flex;
     align-items: center;
@@ -165,8 +163,6 @@ input {
     text-align: center;    
 }
 
-
-
 .bookTitle {
     padding: 8px;
     font-size: 18px;    
@@ -176,8 +172,6 @@ input {
     padding: 8px;
     font-size: 12px;
 }
-
-
 
 .icon {
     width: 26px;

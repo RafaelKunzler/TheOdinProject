@@ -38,19 +38,19 @@ function addCard(book) {
 function styleCard(newDiv) {
     newDiv.innerHTML = `
     <div class="bookInfo">
-        <div><button class="view view`+ bookId +`" id="`+ bookId +`" onclick="changeRead(this.id)"><img src="/img/view.png" class="icon viewIcon"></button></div>
-            <div class="bookTitle" id="bookName`+ bookId + `">            
+        <div><button class="view view${bookId}" id="${bookId}" onclick="changeRead(this.id)"><img src="/img/view.png" class="icon viewIcon"></button></div>
+            <div class="bookTitle" id="bookName${bookId}">            
             </div>
-            <div class ="author" id="author` + bookId +`">            
+            <div class ="author" id="author${bookId}">            
             </div>
         </div>
         <div class="bottomBookContainer">
             <div class="pages">
                 <div><img src="/img/open-book.png" class="icon bookIcon"></div>
                 <h4>|   </h4>
-                <div class="page" id="page`+ bookId + `"></div>
+                <div class="page" id="page${bookId}"></div>
             </div>
-            <div><button class="removeBook remove`+ bookId +`" id="`+ bookId +`" onclick="removeBook(this.id)"><img src="/img/bin.png" class="icon binIcon"></button></div>
+            <div><button class="removeBook remove${bookId}" id="${bookId}" onclick="removeBook(this.id)"><img src="/img/bin.png" class="icon binIcon"></button></div>
     </div>`;   
 }
 
