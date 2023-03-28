@@ -5,7 +5,9 @@ const Home = () => {
 
   const navigate = useNavigate()
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    
     navigate("/menu")
   }
 

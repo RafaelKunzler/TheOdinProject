@@ -1,14 +1,22 @@
+import styles from './Menu.module.css';
+
+import MealCard from "../../components/MealCard"
+
 import { useFetchDocuments } from "../../hooks/useFetchDocument"
 
 const Menu = () => {
 
   const { documents: meals } = useFetchDocuments("meals")
-
-  console.log(meals)
+  
   return (
-    <div>
-        <h1>Menu</h1>
-        {meals && meals.map((meal) => <p id={meal.id}>{meal.name}</p>)}
+    <div className={styles.menu}>
+        <h1>Meals</h1>
+        <div className={styles.container}>
+          {meals && meals.map((meal) => 
+            <MealCard key={meal.id} meal={meal}/>
+          )}
+        </div>
+        
     </div>
   )
 }

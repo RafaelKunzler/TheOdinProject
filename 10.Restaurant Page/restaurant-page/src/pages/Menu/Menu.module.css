@@ -1,0 +1,12 @@
+.menu {
+    
+}
+
+.menu h1 {
+    padding: 0px 32px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
