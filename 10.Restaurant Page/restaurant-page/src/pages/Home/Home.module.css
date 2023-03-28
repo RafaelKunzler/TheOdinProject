@@ -1,0 +1,31 @@
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5em 12em;
+    gap: 82px;
+}
+
+.home h2 {
+    font-size: 3.6em;
+    margin-bottom: .5em;
+}
+
+.home p {
+    font-size: 2.4em;
+    color: #aaa;    
+}
+
+.home button {
+    border: none;
+    font-size: 2em;
+    background-color: #e76f51;
+    color: white;
+    padding: .6em 1.6em;
+    border-radius: .2em;
+}
+
+.home button:hover {
+    background-color: #f4a261;
+    transform: scale(1.1);
+}

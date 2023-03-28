@@ -16,6 +16,12 @@ const NavBar = () => {
                 </NavLink>
             </li>
             <li>
+                <NavLink to ="/menu"
+                className={({isActive}) => (isActive ? styles.active : '')}>
+                    Menu
+                </NavLink>
+            </li>
+            <li>
                 <NavLink to ="/about"
                 className={({isActive}) => (isActive ? styles.active : '')}>
                     About
