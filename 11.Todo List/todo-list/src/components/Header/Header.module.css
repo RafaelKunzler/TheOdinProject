@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 32px;
+    gap: 12px;
+    background-color: #495057;
+    color: #e9ecef;
+}
+
+.header img {    
+    height: 96px;
+}
+
+.header h1 {
+    font-size: 46px;
+}
