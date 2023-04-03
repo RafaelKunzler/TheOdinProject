@@ -6,6 +6,9 @@
     border-right: 2px solid #aaa;
     padding: 32px;
 }
+.mealCard:last-child {
+    border: none;
+}
 
 .mealCard h2 {
     font-size: 1.6em;
