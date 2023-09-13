@@ -1,9 +1,12 @@
 import React from 'react'
 
-const TodoCard = () => {
+const TodoCard = (props) => {
   return (
-    <div>
-        
+    <div>    
+        <h2>{props.name}</h2>
+        <p>{props.description}</p>
+        <p>{props.date}</p>
+        <button onClick={() => props.removeTask(props.id)}>X</button>
     </div>
   )
 }
